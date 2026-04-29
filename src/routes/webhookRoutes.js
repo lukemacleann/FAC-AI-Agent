@@ -65,10 +65,7 @@ router.post('/', async (req, res) => {
       stage,
     });
 
-    return res.json({
-      reply: replyText,
-      stage,
-    });
+    return res.send(replyText);
   } catch (err) {
     console.error('Webhook error:', err);
     return res.status(500).json({ error: 'Internal server error' });
